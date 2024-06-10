@@ -21,14 +21,14 @@ public class DecompilerSettingsJsonConverter : JsonConverter<DecompilerSettings>
   private readonly List<PropertyInfo> _formattingOptionsPropertiesInfo =
     typeof(CSharpFormattingOptions).GetProperties().ToList();
 
-  public override DecompilerSettings? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
+  public override DecompilerSettings Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
   {
     if (reader.TokenType != JsonTokenType.StartObject)
     {
       throw new JsonException();
     }
 
-    DecompilerSettings settings = new DecompilerSettings();
+    DecompilerSettings settings = new();
     string category = "";
     while (reader.Read())
     {
