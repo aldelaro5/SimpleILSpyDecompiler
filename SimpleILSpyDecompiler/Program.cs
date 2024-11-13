@@ -107,7 +107,7 @@ void DecompileProject(FileInfo assembly, FileInfo settingsFile, DirectoryInfo ou
   DecompilerSettings settings =
     JsonSerializer.Deserialize<DecompilerSettings>(File.ReadAllText(settingsFile.FullName), jsonSerializerOptions)!;
 
-  WholeProjectDecompiler decompiler = new(settings, resolver, null, null);
+  WholeProjectDecompiler decompiler = new(settings, resolver, null, null, null);
 
   if (!Directory.Exists(outputDirectory.FullName))
     Directory.CreateDirectory(outputDirectory.FullName);
