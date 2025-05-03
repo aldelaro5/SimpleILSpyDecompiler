@@ -8,6 +8,8 @@
         <Nullable>enable</Nullable>
         <WarningLevel>7</WarningLevel>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <PublishSingleFile>true</PublishSingleFile>
+        <DebugType>embedded</DebugType>
     </PropertyGroup>
 
     <ItemGroup>
